@@ -1,0 +1,74 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile with display name and workspace configurations.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "integer"
+        }
+      },
+      "required": ["uid", "name", "email"]
+    },
+    "Recording": {
+      "title": "Recording",
+      "description": "Metadata for screen recordings.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "duration": {
+          "type": "number"
+        },
+        "recordingMode": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "integer"
+        },
+        "trimStart": {
+          "type": "number"
+        },
+        "trimEnd": {
+          "type": "number"
+        },
+        "captions": {
+          "type": "array",
+          "description": "List of subtitles"
+        },
+        "aiAssets": {
+          "type": "object",
+          "description": "AI-generated titles and chapters"
+        }
+      },
+      "required": ["id", "userId", "title", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User profiles indexed by UID"
+    },
+    "recordings/{recordingId}": {
+      "schema": "Recording",
+      "description": "Recording metadata records indexed by recording ID"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Remix: Screen Recorder Studio",
+  "description": "An interactive tool to record your screen, camera, and audio, edit trimming and subtitles, and export in multiple high-definition formats locally.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "display-capture"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
